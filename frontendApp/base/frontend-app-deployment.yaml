@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: frontend-app
-        image: image-registry.openshift-image-registry.svc:5000/frontend/frontend-app@sha256:33d37ad8b22e839f6d90f3056776ab1df0fee70562841e9142ad3d2b275a409e
+        image: quay.io/ravirhsharma/frontend:latest
         ports:
           - containerPort: 8080
             protocol: TCP
