@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: frontend-app
+  name: frontend-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: frontend-app
+    spec:
+      containers:
+      - name: frontend-app
+        image: image-registry.openshift-image-registry.svc:5000/frontend/frontend-app@sha256:33d37ad8b22e839f6d90f3056776ab1df0fee70562841e9142ad3d2b275a409e
+        ports:
+          - containerPort: 8080
+            protocol: TCP
+        env:
+          - name: REACT_APP_API_URL
+            value: https://backend-app-backend-dev.apps.cluster-x24jw.x24jw.sandbox572.opentlc.com/backend
+        resources: {}
+status: {}
