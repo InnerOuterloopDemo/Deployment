@@ -1,0 +1,4 @@
+resources:
+- backend-app-deployment.yaml
+- backend-app-service.yaml
+- backend-app-route.yaml
